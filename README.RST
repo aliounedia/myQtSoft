@@ -156,7 +156,7 @@ setup(windows=['start.py'],
       }
       )
 
-python setup.py install
+python setup.py py2exe
 
 *** binary dependencies ***
 Your executable(s) also depend on these dlls which are not included,
