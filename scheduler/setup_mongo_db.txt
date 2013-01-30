@@ -1,0 +1,74 @@
+# Installing MongoDb On Window.
+Telecharger  depuis le site  http://www.mongodb.org  , Pour ma part le 
+le fichier en question porte le nom 'mongodb-win32-i386-2.2.2.zip'.
+Note: Sur Window XP, la derniere version ''mongodb-win32-i386-2.2.2.zip'
+ne marche pas .Voir le mailing liste Mongo, elle prend en compte Window
+Vista , et plus recente version. 
+
+
+C:\>mkdir mongodb
+cd \
+move C:\mongodb-win32-* C:\mongodb
+
+# creer le dossier c:\\mongodb\data
+cd mongodb
+mkdir mongodb
+cd data 
+mkdir data
+
+
+# Lancer le demon par defaut sur 27017
+C:\mongodb\bin\mongod.exe --dbpath c:\mongodb\data
+
+# lancer le shell.
+C:\mongodb\bin\mongo.exe
+
+
+MongoDB shell version: 2.0.8
+connecting to: test
+>
+
+# Help commands
+----
+# The current  db 
+db          
+# Show all databases
+show dbs   
+# Drop tatabase
+use mydb; 
+db.dropDatabase()
+
+# Select collections 
+> use mesjobs
+switched to db mesjobs
+switched to db mesjobs
+> show dbs
+local   (empty)
+mesjobs (empty)
+> show dbs
+local   (empty)
+mesjobs (empty)
+> show dbs
+local   (empty)
+mesjobs 0.03125GB
+> show collections
+jobs
+system.indexes
+> db.jobs.find()
+{ "_id" : ObjectId("51095b941078140aa0000000"), "runs" : 94, "name" : "a_job_for
+_test", "misfire_grace_time" : 1, "coalesce" : true, "args" : BinData(0,"gAJdcQF
+jZGF0ZXRpbWUKZGF0ZXRpbWUKcQJVCgfdAR4SKjYDGPiFUnEDYS4="), "next_run_time" : ISODa
+te("2013-01-30T18:47:29.203Z"), "max_instances" : 1, "max_runs" : null, "trigger
+" : BinData(0,"gAJjYXBzY2hlZHVsZXIudHJpZ2dlcnMuaW50ZXJ2YWwKSW50ZXJ2YWxUcmlnZ2VyC
+nEBKYFxAn1xAyhVCGludGVydmFscQRjZGF0ZXRpbWUKdGltZWRlbHRhCnEFSwBLA0sAh1JxBlUPaW50Z
+XJ2YWxfbGVuZ3RocQdHQAgAAAAAAABVCnN0YXJ0X2RhdGVxCGNkYXRldGltZQpkYXRldGltZQpxCVUKB
+90BHhIqLwMY+IVScQp1Yi4="), "func_ref" : "__main__:a_job_for_test", "kwargs" : Bi
+nData(0,"gAJ9cQEu") }
+
+
+
+
+
+
+
+
